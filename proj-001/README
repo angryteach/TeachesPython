@@ -1,0 +1,12 @@
+To edit the programme run:
+	nano main.py
+
+or you could try:
+	vim main.py
+
+
+To run the programme:
+	python main.py
+
+or you could try:
+	python3 main.py
