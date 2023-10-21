@@ -8,3 +8,14 @@ This repo is based on the code from our classes. Every commit will include one p
 2. Change into the directory: cd TeachesPython/
 3. Explore git logs: git log
 4. Browse projects: cd project-001
+
+## GPG for signing commits
+
+Learn to verify you commits on GitHub.
+
+1. gpg --default-new-key-algo rsa4096 --gen-key
+ 1. gpg --edit-key XXXXXXX
+2. git config --global user.signingkey XXXXXXX
+3. gpg --armor --export XXXXXXX
+
+Then add the exported key to GPG keys on GitHub
