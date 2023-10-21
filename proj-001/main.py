@@ -2,6 +2,7 @@
 # This programme computes the area of a right-angled triangle
 #
 
+# the entry point
 def main():
     print("Let's calculate the area of a right triangle.")
     calc()
