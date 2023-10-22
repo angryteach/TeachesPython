@@ -19,3 +19,9 @@ Learn to verify you commits on GitHub.
 3. gpg --armor --export XXXXXXX
 
 Then add the exported key to GPG keys on GitHub
+
+## Exercises
+
+Every project will contain an errors.py file that you can download and correct for more practice.
+
+Once you turn in your work, I shall upload the answers with my commentary most likely in the form of a gist.
