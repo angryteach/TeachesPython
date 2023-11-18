@@ -2,15 +2,26 @@
 # This programme computes the area of a right-angled triangle
 #
 
-# Get user input
-print("Let's calculate the area of a right triangle.")
-a = input("What's the length of one side? ")
-b = input("What's the length of the other side? ")
 
 # the entry point
 def main():
-    check_user_input()
-    calc()
+    n = 3
+    while n > 0:
+        n = n - 1
+        get_user_input()
+        if a == "x" or b == "x":
+            print("You have used the escape key 'x' to exit the programme.")
+            break
+        check_user_input()
+        calc()
+
+def get_user_input():
+    # Get user input
+    print("Let's calculate the area of a right triangle. If you wish to exit, enter x during input.")
+    global a
+    global b
+    a = input("What's the length of one side? ")
+    b = input("What's the length of the other side? ")
 
 # Check whether user gives numbers
 def check_user_input():
