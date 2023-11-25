@@ -4,8 +4,11 @@
 
 # the entry point
 def main():
-    print("Let's calculate the area of a right triangle. \nIf you wish to exit, enter x during input or press Ctrl-c.\n\n")
-    get_user_input()
+    try:
+        print("Let's calculate the area of a right triangle. \nIf you wish to exit, enter x during input or press Ctrl-c.\n\n")
+        get_user_input()
+    except KeyboardInterrupt:
+        print("\nYou interrupted the programme with Ctrl-c.")
 
 
 def get_user_input():
@@ -25,7 +28,7 @@ def get_user_input():
                 break
             check_user_input()
             calc()
-            counter = counter - 1
+            counter -= 1
     except ValueError:
         print("\n\nYou should enter an integer")
         get_user_input()

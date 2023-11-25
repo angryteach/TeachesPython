@@ -1,6 +1,4 @@
-4. Make the programme more interactive
 5. Make the programme run once from the command line
-6. Deal with KeyboardInterrupt
 7. Accept three sides to calculate the area of any triangle
 8. Keep the loop counter unchanged with a user input mistake
 
