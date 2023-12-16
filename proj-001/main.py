@@ -2,6 +2,8 @@
 # This programme computes the area of a right-angled triangle
 #
 
+import sys
+
 # the entry point
 def main():
     try:
@@ -16,8 +18,6 @@ def get_user_input():
     try:
         counter = int(input("How many calculations do you require? "))
         while counter > 0:
-            global a
-            global b
             a = input("\nWhat's the length of one side? ")
             if a == "x":
                 print("\nYou have used the escape key 'x' to exit the programme.")
@@ -26,37 +26,34 @@ def get_user_input():
             if b == "x":
                 print("\nYou have used the escape key 'x' to exit the programme.")
                 break
-            check_user_input()
-            calc()
+            calc(*check_user_input(a, b))
             counter -= 1
     except ValueError:
         print("\n\nYou should enter an integer")
         get_user_input()
+    except TypeError: # raised if a non-integer is used
+        pass # does not pass the error to calc() so that check_user_input() can handle non-numbers
 
 # Check whether user gives numbers
-def check_user_input():
+def check_user_input(a, b):
     try:
-        global a
-        global b
         a = float(a)
         b = float(b)
+        return a, b
     except ValueError:
         print("!!!One or more numbers you gave me were not numbers!!!")
 
 
 # Do the calculation
-def calc():
-    try:
-        global a
-        global b
-        area = 0.5 * a * b
-        print("The area is ", area)
-    except TypeError:
-        print("!!!Nothing to calculate. An error must have occured.!!!")
-
-
-
+def calc(a, b):
+    area = 0.5 * a * b # no need to use try-except because get_user_input() deals with TypeError
+    print("The area is ", area)
 
 if __name__ == "__main__":
-    main()
-
+    if len(sys.argv) == 3:
+        try:
+            calc(*check_user_input(*sys.argv[1:]))
+        except TypeError:
+            print("Exited.")
+    else:
+        main()
